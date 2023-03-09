@@ -10,14 +10,13 @@ function writePassword() {
 }
 function generatePassword() {
 
-  var passLength
+  var passLength = prompt("What is your desired password length?")
 
-  prompt("What is your desired password length?")
-
-  if ("passLength < 8 || passLength > 128") {
+  if (passLength < 8 || passLength > 128) {
     alert("Your password must be between 8 and 128 characters");
     prompt("What is your desired password length?");
   }
+  
 
   var charTypeLow = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];  
 
@@ -35,7 +34,28 @@ function generatePassword() {
 
   confirm("Would you like to include any special characters?")  
 
+  var combineArray = []
+
+  if (confirm("Would you like to include lowercase letters?")){
+    combineArray = combineArray.concat(charTypeLow);
+  }
+  if (confirm("Would you like to include uppercase letters?")){
+    combineArray = combineArray.concat(charTypeUp);
+  }
+  if (confirm("Would you like to include any numbers?")){
+    combineArray = combineArray.concat(charTypeNum);
+  }
+  if (confirm("Would you like to include any special characters?")){
+    combineArray = combineArray.concat(charTypeSpec);
+  }
+ 
+  // for (var i = 0; i < passLength; i++) {
+  //   var randomPass = math.floor(math.random() * combineArray.length);
+  //   pass = pass + combineArray[randomPass];
+  // }
 }
+
+
 
 
 
