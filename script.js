@@ -15,7 +15,7 @@ function generatePassword() {
 
   if (passLength < 8 || passLength > 128) {
     alert("Your password must be between 8 and 128 characters");
-    prompt("What is your desired password length?");
+    prompt("What is your desired password length?"); // ask question again if the desired password length is not bewtween 8 and 128 characters.
   }
 
    // confirm("Would you like to include lowercase letters?")
